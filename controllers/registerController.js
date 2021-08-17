@@ -4,16 +4,20 @@ const { hashPassword } = require('../utils/helpers');
 
 const registerController = async (req, res) => {
 	const { email, password } = req.body;
-	const user = await User.findOne({ email });
-	if (user === null) {
-		const newUser = new User({
-			email,
-			password: await hashPassword(password),
-		});
-		await newUser.save();
-		res.status(201).send({ msg: 'Registered' });
+	if (email) {
+		const user = await User.findOne({ email });
+		if (user === null) {
+			const newUser = new User({
+				email,
+				password: await hashPassword(password),
+			});
+			await newUser.save();
+			res.status(201).send({ msg: 'Registered' });
+		} else {
+			res.status(503).send({ msg: 'User already exists' });
+		}
 	} else {
-		res.status(503).send({ msg: 'User already exists' });
+		res.status(503).send({ msg: 'Invalid Email' });
 	}
 };
 

@@ -6,8 +6,7 @@ const dataRoute = require('./routes/dataRoute');
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
-
+app.use(express.json());
 connectDb();
 
 app.use('/register', registerRoute);

@@ -9,7 +9,9 @@ const userSchemaOptions = {
 	password: 'string',
 };
 const dataSchemaOptions = {
-	secret: 'string',
-	userId: 'string',
+	secret: { required: true, type: String },
+	userId: {
+		type: String,
+	},
 };
-module.exports = { connectionOptions, userSchemaOptions };
+module.exports = { connectionOptions, userSchemaOptions, dataSchemaOptions };
