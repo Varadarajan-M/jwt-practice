@@ -1,8 +1,11 @@
-const mongoose = require('mongoose');
-const User = require('../db/models/user.model');
-const { hashPassword } = require('../utils/helpers');
+import { Request, Response } from 'express';
+import User from '../db/models/user.model';
+import { hashPassword } from '../utils/utils';
 
-const registerController = async (req, res) => {
+const registerController = async (
+	req: Request,
+	res: Response,
+): Promise<void> => {
 	const { email, password } = req.body;
 	if (email) {
 		const user = await User.findOne({ email });
@@ -21,4 +24,4 @@ const registerController = async (req, res) => {
 	}
 };
 
-module.exports = registerController;
+export default registerController;

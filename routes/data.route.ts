@@ -1,13 +1,13 @@
-const express = require('express');
-const authenticateUser = require('../middlewares/auth')
+import express from 'express';
+import authenticateUser from '../middlewares/auth';
 const router = express.Router();
-const {
+import {
 	dataGetController,
 	dataPostController,
-} = require('../controllers/dataController');
+} from '../controllers/dataController';
 router
 	.route('/')
 	.get(authenticateUser, dataGetController)
 	.post(authenticateUser, dataPostController);
 
-module.exports = router;
+export default router;

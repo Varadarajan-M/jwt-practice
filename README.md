@@ -9,5 +9,5 @@
 
 1. Clone the repository
 2. Run `npm install` in the project directory.
-3. Run `nodemon app` to start the server.
-4. The API will be available in http://localhost:7000/login
+3. Run `npm run dev` to start the server.
+4. The API will be available in http://localhost:3000/login
