@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import User from '../db/models/user.model';
-import { hashPassword } from '../utils/utils';
+import { hashPassword } from '../helpers/utils';
 
 const registerController = async (
 	req: Request,

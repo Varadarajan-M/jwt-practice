@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import User from '../db/models/user.model';
 import { sign } from 'jsonwebtoken';
-import { comparePassword } from '../utils/utils';
+import { comparePassword } from '../helpers/utils';
 
 const loginController = async (req: Request, res: Response): Promise<void> => {
 	const { email, password } = req.body;

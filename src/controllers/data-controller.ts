@@ -1,4 +1,4 @@
-import { RequestWithUser } from './../types/request.types';
+import { RequestWithUser } from '../interfaces/request.interface';
 import { Response } from 'express';
 import Data from '../db/models/data.model';
 

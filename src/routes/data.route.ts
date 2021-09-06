@@ -4,7 +4,7 @@ const router = express.Router();
 import {
 	dataGetController,
 	dataPostController,
-} from '../controllers/dataController';
+} from '../controllers/data-controller';
 router
 	.route('/')
 	.get(authenticateUser, dataGetController)
